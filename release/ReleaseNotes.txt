@@ -1,0 +1,87 @@
+KJ Digital Signal Synchronizer v1.3.0
+-------------------------------------
+
+These package is open source and should be used at your own risk. 
+Please read the license agreement. (GNU_LGP_License.htm)
+
+This software is available for download at: 
+
+    http://sirk.sytes.net/
+
+If you have any questions, problems, or find any bugs, please email me at: 
+
+    sirk_sytes@hotmail.com
+
+*********************************************************************************************
+
+Release Notes KJDSS v1.3.0 (January 2010)
+--------------------------
+
+*** New Stuff and Changes
+
+- Added 'calculateFrequencyTable' to KJFFT class to create a frequency table (in hertz) that correlates to the bands of the FFT output data.
+- Improved 'BandDistribution' interface of KJScopeAndSpectrumAnalyser to be more closely coupled to the FFT instance. 
+- The KJScopeAndSpectrumAnalyser band distribution table now includes the frequency range (in hertz) for each visible band of the spectrum analyser.
+- Added customizable 'BandGain' interface to KJScopeAndSpectrumAnalyser which can apply different levels of gain to each band of FFT output data. 
+- Improved look of and added options to scope, spectrum analyser and, volume meter. 
+	- Spectrum analyser can now render the frequency of each band.
+	- Spectrum analyser is using the new BandGain function to 'boost' the high frequencies for a more pleasing display.
+	- Spectrum analyser bars are now spaced evenly no matter the size. 
+	- Volume meter is more accurate and is channel aware. Displays 1 bar for mono, and 2 for stereo.
+- KJScopeAndSpectrumAnalyser class is no longer supported by earlier versions of KJDSS (or KJDSP).
+
+*** Fixes
+
+- Data normaliser used by spectrum analyser supports more PCM raw audio data formats. Still some unsupported formats though (big-endian, unsigned)
+- 8 bit audio data was trashed by the data normalizer due to a signed/unsigned conversion error. Caused incorrectly normalized audio data to be pass to the DSP components.
+
+
+Release Notes KJDSS v1.2.2 (December 2009)
+--------------------------
+
+*** Fixes
+
+- Fix a logic bug that caused clicks during playback when using KJDSS with source data line writing enabled. (Thanks Jeroen)
+
+
+Release Notes KJDSS v1.2.1 (May 2009)
+--------------------------
+
+*** Changes
+
+- Added functionality to modify the band distribution of the spectrum analyzer. See KJScopeAndSpectrumAnalyzer$BandDistribution class.
+- Added option to prevent the KJDigitalSignalSynchronizer from writing to the source data line. See KJDigitalSignalSynchronizer.setSourceDateLineWriteEnabled().
+- Default spectrum analyzer gain adjusted to 3.0
+- KJScopeAndSpectrumAnalyzer class can now be easily extended and customized. Opened up many private methods and fields.
+
+*** Fixes
+
+- Fixed band distribution of sub-sonic bands. The first band more accurately displays bass drums and other low frequency sounds.
+- Minor performance improvements.
+- Sample program displays directories in the file chooser.
+
+
+Release Notes KJDSS v1.2 (February 2009)
+------------------------
+
+*** Changes
+
+- Package renamed to KJ Digital Signal Synchronizer (KJDSS) instead of KJ Digitial Signal Processor (KJ DSP)
+- Java package hierarchy changes. ( kjdss )
+- API changes to KJDigitalSignalProcessor, please update existing processors.
+- Separated core KJ classes from KJ DSS and therefore KJDigitalSignalAudioDataConsumer is now renamed to KJDigitalSignalSynchronizer.
+- Moved all spectrum analyser fine tuning code into the KJScopeAndSpectrumAnalyser (and out of KJFFT)
+- Automatically calculate sample size for FPS and audio format.
+- Provided direct access to DSS data buffer and other information from within a DSP via the KJDigitalSignalSynchronizer.Context object.
+- Removed default sample processing into float[] channels.
+- Added sample class to demo the KJDSS and KJScopeAndSpectrumAnalyser component
+
+*** Fixes
+
+- Fixed FFT calculation to prevent feed back at higher frequencies.
+- Fixed FFT class to handle difference sample sizes properly.
+- Fixed spectrum analyser band merging and averaging calculations. 5 band output looks roughly the same as 20 band or 120 band etc. )
+- Applied Log band distribution to spectrum analyser for band merging. This spreads the lower frequency bands out wider for a nicer view of human voices in the spectrum.  
+- Applied proper Log band gain spectrum analyser. Applies a Log multiplier to each band to "boost" the higher frequency bands, which generate a more uniform spectrum analyser output.
+- Fixed GUI deadlocks with KJScopeAndSpectrumAnalyser component.
+- Fixed buffer overflow problems when writing large amounts of audio data ( > 256kb ) to the DSS.

@@ -1,17 +1,16 @@
-# KJDSS
-
-The KJ Digital Signal Synchronizer (KJDSS) library allows developers of Java Sound based applications to implement real time digital signal processors like scopes and spectrum analysers. It includes an all Java scope and spectrum analyser component.
+KJ Digital Signal Synchronizer v1.3.0
+-------------------------------------
 
 These package is open source and should be used at your own risk. 
 Please read the license agreement. (GNU_LGP_License.htm)
 
-This software package is available for download at: 
+This software is available for download at: 
 
-    http://www.fudcom.com/
+    http://sirk.sytes.net/
 
 If you have any questions, problems, or find any bugs, please email me at: 
 
-    info@fudcom.com
+    sirk_sytes@hotmail.com
 
 *********************************************************************************************
 
@@ -59,7 +58,7 @@ If you have any questions, problems, or find any bugs, please email me at:
 
     - Finally, you need process the audio data in some way to render it to the display.
 
-4. The KJ DSS Scope/Spectrum Analyzer Component
+3. The KJ DSS Scope/Spectrum Analyzer Component
 
     There is an AWT component called KJScopeAndSpectrumAnalyzer (kjdss.ui) provided 
     with this package that uses the KJ DSS.

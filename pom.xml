@@ -1,0 +1,28 @@
+<project>
+
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>com.fudcom.kjdss</groupId>
+	<artifactId>kjdss-root</artifactId>
+	<version>1.3.2-SNAPSHOT</version>
+	<packaging>pom</packaging>
+
+	<modules>
+		<module>samples</module>
+		<module>library</module>
+	</modules>
+
+	<repositories>
+		<repository>
+			<id>repo</id>
+			<releases>
+				<enabled>true</enabled>
+				<checksumPolicy>ignore</checksumPolicy>
+			</releases>
+			<snapshots>
+				<enabled>false</enabled>
+			</snapshots> 
+			<url>file:///${session.executionRootDirectory}/repo</url>
+		</repository>
+	</repositories>
+
+</project>

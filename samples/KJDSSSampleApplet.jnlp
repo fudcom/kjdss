@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jnlp spec="1.0+" codebase="" href="">
+    <information>
+        <title>KJDSS Sample Applet</title>
+        <vendor>Sirk.Sytes.net</vendor>
+    </information>
+    <resources>
+        <!-- Application Resources -->
+        <j2se version="1.6+" href="http://java.sun.com/products/autodl/j2se" />
+        <jar href="kjdss_applet.jar" main="true"/>
+        <jar href="jl1.0.jar"/>
+    </resources>
+    <applet-desc 
+         name="KJDSS Sample Applet"
+         main-class="KJDSSSampleApplet.class"
+         width="500"
+         height="300">
+     </applet-desc>
+     <update check="background"/>
+</jnlp>	
