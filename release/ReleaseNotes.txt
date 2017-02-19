@@ -1,18 +1,23 @@
-KJ Digital Signal Synchronizer v1.3.0
--------------------------------------
+KJ Digital Signal Synchronizer
+------------------------------
 
 These package is open source and should be used at your own risk. 
 Please read the license agreement. (GNU_LGP_License.htm)
 
 This software is available for download at: 
 
-    http://sirk.sytes.net/
+    http://www.fudcom.com/
 
 If you have any questions, problems, or find any bugs, please email me at: 
 
-    sirk_sytes@hotmail.com
+    info@fudcom.com
 
 *********************************************************************************************
+
+Release Notes KJDSS v1.3.2-SNAPSHOT (January 2017)
+-----------------------------------
+
+Imported to Github.
 
 Release Notes KJDSS v1.3.0 (January 2010)
 --------------------------
