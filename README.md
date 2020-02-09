@@ -25,7 +25,15 @@ See the 'ReleaseNotes.txt' for details.
  
 ## How do I use it?
 
-You can look at the 'KJDSSSample.java' source file included in the 'kjdss130_src.zip' file OR consider this pseudo code example:
+You can build the sample project with Maven, just type:
+
+    mvn package
+
+then in the samples/target directory, double click the jar file:
+
+    kjdss-samples-X.X.X-jar-with-dependencies.jar
+
+... or consider this pseudo code example:
 
     KJDigitalSignalSynchronizer dss = new KJDigitalSignalSynchronizer();
 
